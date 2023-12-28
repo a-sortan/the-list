@@ -1,4 +1,5 @@
-import './App.css'
+import TaskListComponent from './components/TaskListComponent';
+import './App.css';
 
 function App() {
 
@@ -7,20 +8,20 @@ function App() {
       <div className='app'>
         <header className="header">Header</header>
         <div className="holygrail-body">
-          <div className="content">
-            the-list
-            <button className='red-bck'>click me</button>
-            <button className='primary'> click me</button>
-            <button className='secondary'> click me</button>
+          <div  className="nav">
+            <ul>
+              <li>Menu 1</li>
+              <li>Menu 2</li>
+              <li>Menu 3</li>
+              <button className='red-bck'> click me</button>
+              <button className='primary-bck'> click me</button>
+              <button className='secondary-bck'> click me</button>
+            </ul>
           </div>
-          <ul className="nav">
-            <li>Menu 1</li>
-            <li>Menu 2</li>
-            <li>Menu 3</li>
-            <button className='red-bck'> click me</button>
-            <button className='primary'> click me</button>
-            <button className='secondary'> click me</button>
-          </ul>
+          <div className="content">
+            <TaskListComponent />
+          </div>
+          
           
           <div className="aside">Aside</div>
         </div>

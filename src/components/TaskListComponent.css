@@ -1,0 +1,24 @@
+.task-list-container {
+  /* background-color: aquamarine; */
+  max-width: 800px;
+  margin: auto;
+}
+
+.task-list {
+  /* background-color: blueviolet; */
+  /* text-align: left; */
+  /* list-style: none; */
+  padding: 1rem;
+}
+
+.task {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 2px solid #D8D9D7;
+}
+
+.task-label i {
+  margin-right: 8px;
+}
