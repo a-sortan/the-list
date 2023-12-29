@@ -1,0 +1,7 @@
+.task-control i {
+  margin: 0 4px;
+}
+
+.task-control i:last-child {
+  margin-right: 0;
+}

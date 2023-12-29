@@ -1,0 +1,11 @@
+.task-text {
+  background-color: transparent;
+  /* border: 0; */
+  /* border-bottom: 2px solid #D8D9D7; */
+  border: 2px solid #d0d0d0;
+  color: #73706C;
+  max-width: 600px;
+  width: 320px;
+  padding: 16px 4px;
+  margin: 4px;
+}

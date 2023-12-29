@@ -4,21 +4,30 @@
   margin: auto;
 }
 
+.task-list-container h2 {
+  margin-bottom: 4rem;
+}
+
 .task-list {
   /* background-color: blueviolet; */
-  /* text-align: left; */
   /* list-style: none; */
   padding: 1rem;
+  text-align: left;
+  /* margin-top: 4rem; */
 }
 
 .task {
   display: flex;
-  /* flex-direction: column; */
   justify-content: space-between;
   padding: 8px;
   border-bottom: 2px solid #D8D9D7;
 }
 
+.task-label {
+  width: 90%;
+}
+
 .task-label i {
   margin-right: 8px;
+  
 }

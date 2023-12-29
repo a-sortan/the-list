@@ -4,16 +4,16 @@ import './TaskComponent.css'
 interface TaskComponentProps {
   task: Task,
   onChangeTask: any,
-  onDeleteTask: any
+  onDeleteTask: any,
+  showAside: any
 }
 
-export default function TaskComponent({task, onChangeTask, onDeleteTask}:TaskComponentProps) {
-  let checkStyle = task.done ? "bi bi-check-square-fill secondary" : "bi bi-square gray-1"
+export default function TaskComponent({task, onChangeTask, onDeleteTask, showAside}:TaskComponentProps) {
   return (
     <>
     <span className="task-label">
       <i 
-        className={checkStyle}
+        className={task.done ? "bi bi-check-square-fill secondary" : "bi bi-square"}
         onClick={() => 
           {
             const tsk:Task = {
@@ -31,11 +31,23 @@ export default function TaskComponent({task, onChangeTask, onDeleteTask}:TaskCom
       ></i> 
         {task.text}
       </span>
-      <i className="bi bi-trash3 gray-1" onClick={() => {
-        console.log("delete", task)
-        onDeleteTask(task.id);
-        }}>
-      </i>
+      <span className="task-control">
+        <i 
+          className="bi bi-pencil-square"
+          onClick={() => {
+            console.log('edit', task);
+            console.log(showAside)
+            showAside();
+            }}
+        ></i>
+        <i 
+          className="bi bi-trash3 red" 
+          onClick={() => {
+            onDeleteTask(task.id);
+          }}>
+        </i>
+      </span>
+      
     </>
   )
 }
