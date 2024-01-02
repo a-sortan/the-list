@@ -2,6 +2,7 @@ import TaskListComponent from './components/TaskListComponent';
 // import EditTaskComponent from './components/EditTaskComponent';
 import './App.css';
 import { useState } from 'react';
+import AsideComponent from './components/AsideComponent';
 
 function App() {
   const [asideVisible, setAsideVisible] = useState(true);
@@ -9,9 +10,15 @@ function App() {
     setAsideVisible(true);
   }
 
-  const hideAside = () => {
+  function hideAside() {
     setAsideVisible(false);
   }
+
+  function populateAside(EditTaskComponent: any) {
+    console.log("populateAside");
+    console.log(EditTaskComponent)
+  }
+
   return (
     <>
       <div className='app'>
@@ -30,15 +37,7 @@ function App() {
           <div className="content">
             <TaskListComponent showAside={showAside} />
           </div>
-          <div className={asideVisible ? "aside" : "hide"}>
-            <i className="bi bi-x-square-fill close-aside" onClick={() => {
-              hideAside();
-            }}></i>
-            Aside
-            {/* <EditTaskComponent 
-              task={{id: 0, text:'Be happy', done: false}}
-            /> */}
-          </div>
+          <AsideComponent asideVisible={asideVisible} hideAside={hideAside} />
         </div>
         {/* <footer className="footer">Footer</footer> */}
       </div>
