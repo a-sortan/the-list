@@ -14,11 +14,6 @@ function App() {
     setAsideVisible(false);
   }
 
-  function populateAside(EditTaskComponent: any) {
-    console.log("populateAside");
-    console.log(EditTaskComponent)
-  }
-
   return (
     <>
       <div className='app'>

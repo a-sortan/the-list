@@ -1,0 +1,32 @@
+.task-weekly {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.weekly-task-checkbox {
+  font-size: 1.5rem;
+  padding: 0 8px;
+}
+
+.weekly-task-checkbox i {
+  margin: 8px;
+}
+
+.weekly-checkbox {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #73706C;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  margin: 8px;
+  padding: 2px 0;
+}
+
+.weekly-checkbox-done {
+  background-color: var(--secondary);
+  color: white;
+  border-width: 0;
+}

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Task } from "../types/Tasktype"
+import { Task } from "../types/TaskType"
 import './EditTaskComponent.css'
 
 interface EditTaskComponentProps {

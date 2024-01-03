@@ -1,9 +1,10 @@
 import TaskComponent from "./TaskComponent";
-import type { Task } from "../types/Tasktype";
-import { useState } from "react";
-
-import './TaskListComponent.css'
 import AddTaskComponent from "./AddTaskComponent";
+import type { Task } from "../types/TaskType";
+import { useState } from "react";
+import './TaskListComponent.css'
+import WeeklyRepeatsComponent from "./WeeklyRepeatsComponent";
+import { WeeklyRepeatedTasks } from "../types/WeeklyTemplateType";
 
 let nextId = 3;
 const initialTasks = [
@@ -12,12 +13,39 @@ const initialTasks = [
   {id: 2, text: 'Play with cat', done: false},
 ];
 
+const exampleWeekRepeats:WeeklyRepeatedTasks[] = [
+  {
+    id:100, 
+    text:"Repeat me 3 times a week", 
+    repeatWeekly: 3, 
+    instances:[
+      {id:1001, done: true, completed:"2024-01-01T12:07:06.215Z"},
+      {id:1002, done: true, completed:"2024-01-03T12:07:06.215Z"},
+      {id:1003, done: false},
+    ] 
+  },{
+    id:101, 
+    text:"Repeat me 7 times a week", 
+    repeatWeekly: 7,
+    instances: [
+      {id:1004, done: true, completed:"2024-01-01T12:07:06.215Z"},
+      {id:1005, done: true, completed:"2024-01-02T12:07:06.215Z"},
+      {id:1006, done: true, completed:"2024-01-03T12:07:06.215Z"},
+      {id:1007, done: true, completed:"2024-01-04T12:07:06.215Z"},
+      {id:1009, done: true, completed:"2024-01-05T12:07:06.215Z"},
+      {id:1010, done: true, completed:"2024-01-06T12:07:06.215Z"},
+      {id:1011, done: true, completed:"2024-01-07T12:07:06.215Z"}
+    ]
+  }
+]
+
 interface TaskListComponentProps {
   showAside: any
 }
 
 export default function TaskListComponent({showAside}:TaskListComponentProps) {
-
+  const [tasks, setTasks] = useState<Task[]>(initialTasks);
+  
   function handleChangeTask(task: Task) {
     setTasks(
       tasks.map((item) => {
@@ -44,10 +72,12 @@ export default function TaskListComponent({showAside}:TaskListComponentProps) {
       }
     ])
   }
-  const [tasks, setTasks] = useState<Task[]>(initialTasks);
+
   return (
     <div className="task-list-container">
-      <h2>Today</h2>
+      <h2>Today, {new Date().toDateString()}</h2>
+      <WeeklyRepeatsComponent weeklyRepTasks={exampleWeekRepeats} />
+      <h3>Task</h3>
       <AddTaskComponent onAddTask={handleAddTask}/>
       <ul className="task-list">
         {tasks.map(item => 

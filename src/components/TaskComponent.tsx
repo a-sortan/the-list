@@ -1,4 +1,4 @@
-import type { Task } from "../types/Tasktype"
+import type { Task } from "../types/TaskType"
 import './TaskComponent.css'
 
 interface TaskComponentProps {
