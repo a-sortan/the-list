@@ -1,3 +1,9 @@
+.weekly-repeat-tasks {
+  margin:2rem auto;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 8px; */
+}
+
 .task-weekly {
   justify-content: flex-start;
   align-items: center;

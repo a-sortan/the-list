@@ -75,9 +75,9 @@ export default function TaskListComponent({showAside}:TaskListComponentProps) {
 
   return (
     <div className="task-list-container">
-      <h2>Today, {new Date().toDateString()}</h2>
+      <h2><span className="gray-3">{new Date().toDateString()}</span></h2>
       <WeeklyRepeatsComponent weeklyRepTasks={exampleWeekRepeats} />
-      <h3>Task</h3>
+      {/* <h3>Task</h3> */}
       <AddTaskComponent onAddTask={handleAddTask}/>
       <ul className="task-list">
         {tasks.map(item => 
